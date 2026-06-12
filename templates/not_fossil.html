@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Not a Fossil</title>
+  <style>
+    /* ===== Body & Background ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(180deg, #e8dec8 0%, #c8b18a 100%);
+      color: #3b2f1e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Fossil texture overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    /* ===== Heading ===== */
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      color: #3b2f1e;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.35), 0 0 6px rgba(255,255,255,0.1);
+      margin-bottom: 30px;
+    }
+
+    /* ===== Fossil silhouette behind image ===== */
+    .fossil-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .fossil-wrapper::before {
+      content: url('https://i.ibb.co/YTZhkpJ/fossil-silhouette.png'); /* Example fossil silhouette */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 350px;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    /* ===== Uploaded Image ===== */
+    img {
+      width: 320px;
+      border-radius: 14px;
+      border: 4px solid #8b6b4a;
+      background-color: #eee8dc;
+      padding: 6px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+      transition: transform 0.5s, box-shadow 0.5s;
+      position: relative;
+      z-index: 1;
+    }
+
+    img:hover {
+      transform: scale(1.06) rotate(-1deg);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* ===== Message ===== */
+    .msg {
+      font-size: 1.5rem;
+      margin-top: 25px;
+      color: #7b3f00;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .confidence {
+      font-size: 1.1rem;
+      margin-top: 8px;
+      color: #5c4325;
+    }
+
+    /* ===== Engraved Button ===== */
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: #a78b5f;
+      color: #fff;
+      border-radius: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,0.25),
+                  0 6px 12px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    a::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.08);
+      transform: rotate(45deg);
+      transition: all 0.5s;
+    }
+
+    a:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    a:hover {
+      background: #7b5e3b;
+      transform: translateY(-3px);
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,0.3),
+                  0 8px 15px rgba(0,0,0,0.45);
+    }
+
+    /* ===== Footer Shadow ===== */
+    body::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 80px;
+      background: radial-gradient(circle at center, rgba(59,47,30,0.25), transparent 70%);
+      z-index: -1;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      img { width: 90%; }
+      h2 { font-size: 2rem; }
+      .msg { font-size: 1.3rem; }
+      a { padding: 10px 22px; }
+      .fossil-wrapper::before { width: 250px; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <h2>🪨 Not a Fossil Detected</h2>
+  <div class="fossil-wrapper">
+    <img src="{{ image_path }}" alt="Uploaded Image">
+  </div>
+  <div class="msg">This image does not appear to contain a fossil.</div>
+  <div class="confidence">Model confidence: {{ confidence }}%</div>
+  <a href="/">🔁 Try Another Image</a>
+</body>
+</html>

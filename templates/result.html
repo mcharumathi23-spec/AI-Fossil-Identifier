@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .result-page {
+            background: linear-gradient(to bottom, #f0e6d2, #d9cbb1);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        .result-container {
+            background: #fffaf0 url('https://www.transparenttextures.com/patterns/rocky-wall.png') repeat;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .result-container img {
+            max-width: 100%;
+            border-radius: 20px;
+            border: 4px solid #a07c50;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #5b3a29;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #8b5e3c;
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #5b3a29;
+        }
+
+        .ai-desc {
+            background: linear-gradient(145deg, #f7f3ec, #e5dccd);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="result-page">
+    <div class="result-container">
+        <img src="{{ image_path }}" alt="Fossil Image">
+
+        <h2>{{ fossil }}</h2>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+
+        <h3>🧬 Fossil Details</h3>
+        <ul>
+            <li><strong>Class:</strong> {{ fossil_info.class }}</li>
+            <li><strong>Era:</strong> {{ fossil_info.era }}</li>
+            <li><strong>Diet:</strong> {{ fossil_info.diet }}</li>
+            <li><strong>Geological Period:</strong> {{ fossil_info.geological_period }}</li>
+            <li><strong>Habitat:</strong> {{ fossil_info.habitat }}</li>
+            <li><strong>Estimated Lifespan:</strong> {{ fossil_info.estimated_lifespan_years }}</li>
+            <li><strong>Locations:</strong> {{ fossil_info.locations | join(', ') }}</li>
+            <li><strong>Notes:</strong> {{ fossil_info.notes }}</li>
+        </ul>
+
+        <h3>💡 Fossil Summary</h3>
+        <div class="ai-desc">
+            <p>{{ ai_summary }}</p>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "Trilobite": {
+    "class": "Arthropoda",
+    "era": "Paleozoic Era",
+    "diet": "Scavenger / Detritivore",
+    "geological_period": "Cambrian to Permian (521-252 million years ago)",
+    "habitat": "Marine ocean floors and shallow seas",
+    "estimated_lifespan_years": "10-20 years",
+    "locations": ["North America", "Europe", "Asia", "Australia"],
+    "notes": "Trilobites are among the earliest known groups of arthropods, characterized by their three-lobed, three-segmented exoskeletons. They serve as important index fossils for dating Paleozoic rocks."
+  },
+  "Ammonite": {
+    "class": "Cephalopoda",
+    "era": "Mesozoic Era",
+    "diet": "Carnivorous",
+    "geological_period": "Devonian to Cretaceous (400-66 million years ago)",
+    "habitat": "Open marine waters",
+    "estimated_lifespan_years": "1-3 years",
+    "locations": ["Madagascar", "Morocco", "England", "Germany", "India"],
+    "notes": "Ammonites are extinct marine mollusks with spiral shells divided into chambers. They are closely related to modern squids and octopuses and are often found in limestone deposits."
+  },
+  "Belemnites": {
+    "class": "Cephalopoda",
+    "era": "Mesozoic Era",
+    "diet": "Carnivorous",
+    "geological_period": "Jurassic to Cretaceous (200-65 million years ago)",
+    "habitat": "Marine environments",
+    "estimated_lifespan_years": "3-5 years",
+    "locations": ["Europe", "Japan", "South America", "India"],
+    "notes": "Belemnites were squid-like cephalopods with internal bullet-shaped shells. Their fossils are often found as smooth, cylindrical rostra in sedimentary rocks."
+  },
+  "Corals": {
+    "class": "Cnidaria",
+    "era": "Paleozoic to Recent",
+    "diet": "Filter feeder (zooplankton and microscopic algae)",
+    "geological_period": "Ordovician to Present (485 million years ago – today)",
+    "habitat": "Warm shallow marine reefs",
+    "estimated_lifespan_years": "Hundreds of years (colonies)",
+    "locations": ["Australia", "Caribbean Sea", "Indian Ocean", "Pacific Ocean"],
+    "notes": "Corals are marine invertebrates that form large reef structures through calcium carbonate secretion. Fossil corals reveal ancient ocean conditions and climates."
+  },
+  "Crinoids": {
+    "class": "Echinodermata",
+    "era": "Paleozoic Era",
+    "diet": "Filter feeder",
+    "geological_period": "Ordovician to Present (480 million years ago - today)",
+    "habitat": "Shallow to deep marine waters",
+    "estimated_lifespan_years": "20 - 30 years",
+    "locations": ["North America", "Europe", "China", "India"],
+    "notes": "Crinoids, also called sea lilies, are echinoderms related to starfish. Their stalked fossils often resemble flower stems, found abundantly in Paleozoic rocks."
+  },
+  "Leaf Fossil": {
+    "class": "Plantae",
+    "era": "Cenozoic Era",
+    "diet": "Autotrophic (photosynthetic)",
+    "geological_period": "Jurassic to Recent (200 million years ago - today)",
+    "habitat": "Terrestrial (forests, wetlands)",
+    "estimated_lifespan_years": "Varies by species (few years to decades)",
+    "locations": ["North America", "Europe", "India", "China"],
+    "notes": "Leaf fossils record the evolution of ancient plants and help scientists reconstruct past climates. Their impressions often show intricate vein patterns preserved in rock."
+  }
+}
